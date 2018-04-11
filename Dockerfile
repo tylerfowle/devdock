@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y \
       iputils-ping \
       jq \
       libssl-dev \
+      libnotify-bin \
       libevent-dev \
       libncurses5-dev \
       net-tools \
@@ -86,8 +87,7 @@ RUN gem install python
 RUN gem install neovim
 
 # npm installs
-RUN npm install -g neovim
-RUN npm install -g gulp
+RUN npm install -g neovim gulp sass
 
 # Install vim-plug
 RUN curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
