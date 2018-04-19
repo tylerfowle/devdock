@@ -47,7 +47,8 @@ RUN apt-get update && apt-get install -y \
 RUN chsh -s /usr/bin/zsh
 
 # Install nodejs
-RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+RUN curl -sL -o /tmp/setup_8.x https://deb.nodesource.com/setup_8.x
+RUN bash /tmp/setup_8.x
 RUN apt-get install -y nodejs
 
 # Add custom repos
